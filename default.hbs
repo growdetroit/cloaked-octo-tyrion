@@ -99,9 +99,15 @@
     <script type="text/javascript" src="{{asset "js/sscr.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
     {{! Ouibounce modal script. Ouibounce modal is loaded after the footer via the modal partial}}
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.10/ouibounce.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.10/ouibounce.min.js"></script>
     <script type="text/javascript">
-      ouibounce($('#ouibounce-modal'));
+      ouibounce(false, {
+        timer: 30000,
+        delay: 100,
+        callback: function() {
+          $('#ouibounce-modal').modal('show');
+        },
+      });
     </script>
     {{! END: Ouibounce}}
     <script type="text/javascript">
