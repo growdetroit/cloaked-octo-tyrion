@@ -3,6 +3,10 @@
  *
  */
 
+.modal-dialog {
+  margin: 100px auto;
+}
+
 .modal-content p {
   font-size: 16px;
   line-height: 22px;
