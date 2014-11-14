@@ -8,6 +8,10 @@
   line-height: 22px;
 }
 
+.modal-content .input-group {
+  padding: 30px;
+}
+
 .modal-content .btn {
   padding: 6px 12px;
   font-size: 14px;
