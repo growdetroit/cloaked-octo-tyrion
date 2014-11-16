@@ -46,6 +46,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/colors/default.css"}}" /> {{! Change color scheme here }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/modal.css"}}" /> {{! Change color scheme here }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}" /> {{! Custom CSS here }}
     {{ghost_head}}
     <script type="text/javascript"> var sfThemeOptions = { global : {   rootUrl : '{{@blog.url}}' } }</script>
@@ -80,6 +81,7 @@
             + footer/three-columns
         }}
         {{>footer/three-columns}}
+        {{>footer/modal}}
     </div>
     {{ghost_foot}}
     {{! The main JavaScript file for Globin }}
@@ -97,6 +99,23 @@
     <script type="text/javascript" src="{{asset "js/jquery.placeholder.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/sscr.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+    {{! Ouibounce modal script. Ouibounce modal is loaded after the footer via the modal partial}}
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.10/ouibounce.min.js"></script>
+    <script type="text/javascript">
+      ouibounce(false, {
+        timer: 5000,
+        delay: 100,
+        callback: function() {
+          $('#ouibounce-modal').modal('show');
+        },
+      });
+    </script>
+    {{! END: Ouibounce}}
+    <script type="text/javascript">
+      if(window.analytics=window.analytics||[],window.analytics.included)window.console&&console.error&&console.error("analytics.js included twice");else{window.analytics.included=!0,window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(a){return function(){var n=Array.prototype.slice.call(arguments);return n.unshift(a),window.analytics.push(n),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(a){var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+a+"/analytics.min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(n,t)},window.analytics.SNIPPET_VERSION="2.0.9",
+      window.analytics.load("116wqukvnr")}
+      window.analytics.page();
+    </script>
     {{{block "customScript"}}}
 </body>
 </html>
