@@ -97,7 +97,9 @@
     <script type="text/javascript">
       $('pre > code').each(function(){
         var lang = $(this).attr('class');
-        $(this).addClass('language-'+lang);
+        var prism-language = 'language-' + lang;
+        $(this).addClass(prism-language);
+        $(this).parent().addClass(prism-language);
       });
     </script>
     <script type="text/javascript" src="{{asset "js/prism.js"}}" data-default-language="markup"></script>
