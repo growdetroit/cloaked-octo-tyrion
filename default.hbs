@@ -99,7 +99,7 @@
         var lang = $(this).attr('class');
         var prismHelper = 'language-' + lang;
         $(this).addClass(prismHelper);
-        $(this).parent().addClass(prismHelper);
+        $(this).parent().addClass(prismHelper).addClass('line-numbers');
       });
     </script>
     <script type="text/javascript" src="{{asset "js/prism.js"}}" data-default-language="markup"></script>
