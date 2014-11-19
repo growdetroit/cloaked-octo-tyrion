@@ -93,15 +93,6 @@
     <script type="text/javascript" src="{{asset "js/jquery.magnific-popup.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/jqBootstrapValidation.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/imagesloaded.pkgd.min.js"}}"></script>
-    {{! prism helper}}
-    <script type="text/javascript">
-      $('pre > code').each(function(){
-        var lang = $(this).attr('class');
-        var prismHelper = 'language-' + lang;
-        $(this).addClass(prismHelper);
-        $(this).parent().addClass(prismHelper).addClass('line-numbers');
-      });
-    </script>
     <script type="text/javascript" src="{{asset "js/prism.js"}}" data-default-language="markup"></script>
     <script type="text/javascript" src="{{asset "js/moment.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/pace.min.js"}}"></script>
